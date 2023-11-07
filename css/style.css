@@ -1,0 +1,167 @@
+/* step 1 animate the logo with keyframes */
+@keyframes mymove {
+    0%   {width: 25px; opacity: 0;}
+    100% {width: 475px; opacity: 1;}
+  }
+  #logo {
+    animation: mymove 5s ease-out; 
+}
+
+/* step 2 set up the body element, including font and background image */
+body{
+    font-family: 'Poppins', serif;
+    background-image: url("../images/concrete_seamless.png");
+    background-color: #f1f1f1;
+}
+
+/* step 3 edit the css for the header tag to match the example */
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* step 4 edit the css for nav_links class to match the example */
+.nav_links{
+    display:flex;
+    flex-direction: column;
+}
+
+/* step 5 style for visited links */
+a:link, a:visited {
+    color:#0000EE ; /* set the same color as unvisited links */
+}
+
+/* step 6 style header elements that are direct children of a card class */
+.card > header{
+    background: #288088;
+    border: solid 2px #45ADAD;
+    padding: 20px 0px;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+}
+
+/* Fix the corners problem to match the card example  */
+.card {
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+    overflow: hidden; 
+    flex: 0 0 450px; /* step 7 set the base width of the card to 450px */
+}
+
+
+/* step 8 set up pricing class to match the example */
+.pricing{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+/* step 9 style the images in the gallery class */
+.gallery img{
+    border: 10px solid #50C7C7;
+    margin: 10px;
+    width: 300px;
+}
+
+/* step 10 edit css to set gallery class to match the example*/
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Media query for screens larger than 900px */
+@media (min-width: 900px) {
+/* step 11 edit the css for the header tag to match the example */
+header{
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+/* step 11 edit the css for nav_links class to match the example */
+.nav_links{
+    display: flex; /* Use flexbox for the navigation links */
+    flex-direction: row;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+/* step 12 edit the card class to set the base width of the card to 275px */
+.card {
+    flex: 0 0 275px;
+}
+
+/* step 12 set up pricing class to match the example */
+.pricing{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+/* step 13 make the header remain visible at the top of the screen even as we scroll down */
+body > header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+body {
+    padding-top: 100px; /* add body top padding to make sure the main content can be displayed */
+}
+}
+
+/* step 14 no animation will be applied when users prefer reduced motion */
+@media screen and (prefers-reduced-motion: reduce){
+#logo {
+    animation: none; /* remove animation when users prefer reduced motion */   
+  }
+}
+
+/* Media query for when the page is printed in portrait mode */
+@media print {
+body {
+    font-family: Arial, Helvetica, sans-serif; /* step 15 change font to Arial with Helvetica as a backup */
+    background-image: none; /* step 16 remove background image */
+}
+/* step 17 edit the header and nav related elements so that they are spaced according to the example image */
+header {
+    display: block;
+    text-align: center;
+}
+.nav_links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+/* step 18 edit the pricing class so that the elements align along the bottom */
+.pricing {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-end; 
+  }
+
+/* step 19 set up the card elements */
+.card{
+    border: solid 2px #45ADDD;
+    flex: 1 1 325px;
+    height: auto;
+}
+
+/* step 20 hide the gallery part */
+.gallery, #gallery{
+    display: none;
+}
+
+/* step 21 add the thumbs up emoji to the second li element in a list*/
+.card li:nth-child(2)::after {
+    content: '👍'; 
+}
+}
